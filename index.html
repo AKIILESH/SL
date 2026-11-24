@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sri Lanka South Coast: 30 Dec to 5 Jan</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f7f6;--card:#ffffff;--ink:#10282f;--mute:#5b727a;--line:#d5e3e2;--accent:#0f7b83;--accent-ink:#ffffff;--sun:#c77a12;--sunbg:#fbf0dc;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1a1f;--card:#122830;--ink:#e6f1f0;--mute:#8fa9b0;--line:#244048;--accent:#4fc3c9;--accent-ink:#06191d;--sun:#f0b25a;--sunbg:#33260f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b1a1f;--card:#122830;--ink:#e6f1f0;--mute:#8fa9b0;--line:#244048;--accent:#4fc3c9;--accent-ink:#06191d;--sun:#f0b25a;--sunbg:#33260f;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 120px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Figtree,system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);padding:12px 20px;border-bottom:1px solid var(--line)}
+.bar-in{max-width:760px;margin:0 auto}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:6px 12px;cursor:pointer;text-align:left;font:500 13px/1.25 Figtree,sans-serif}
+.chip b{display:block;font:700 15px "Bricolage Grotesque",sans-serif}
+.chip[aria-current="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+main{max-width:760px;margin:0 auto;padding:18px 20px 40px}
+.day{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px 8px;margin-bottom:16px}
+.day[hidden]{display:none}
+.tag{display:inline-block;background:var(--sunbg);color:var(--sun);font:600 12px Figtree,sans-serif;padding:3px 10px;border-radius:999px;margin-bottom:10px}
+ul{list-style:none;margin:0;padding:0}
+li{display:grid;grid-template-columns:64px 1fr;gap:12px;padding:11px 0;border-top:1px solid var(--line)}
+li:first-child{border-top:0}
+.t{color:var(--accent);font-weight:600;font-size:14px;font-variant-numeric:tabular-nums}
+.n{font-weight:600}
+.d{color:var(--mute);font-size:14.5px}
+@media (max-width:420px){li{grid-template-columns:52px 1fr;gap:10px}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+
+<body>
+<div class="bar"><div class="bar-in">
+<div class="chips" id="chips" role="tablist" aria-label="Dates"></div>
+</div></div>
+<main id="days"></main>
+<script>
+var D=[
+{d:"Wed 30 Dec",s:"30 Dec",w:"Colombo to Galle Fort to Madiha",t:"Arrive and settle in",tag:"",i:[
+["10:15","Flight Chennai to Colombo","Lands 11:30. Sort your ETA and travel documents before you fly."],
+["12:30","Van pickup","Pre-book one 9-seater van for six plus luggage. Grab a SIM and some cash."],
+["14:45","Lunch at Church Street Social","Galle Fort. About 2.5 hrs from the airport by expressway."],
+["15:45","Short rampart walk","About 20 minutes, then hit the road."],
+["16:15","Drive to Madiha","About 1 to 1.25 hrs along the south coast. Check-in is 14:00 to 22:00."],
+["17:45","Check in at The Doctor’s House","Freshen up before the party starts at 6 pm."],["19:00","Dinner and party at The Doctor’s House","Wood-fired pizza on site. Live DJs and music on Wednesdays, 6 pm to midnight."]]},
+{d:"Thu 31 Dec",s:"31 Dec",w:"Madiha to Ahangama (placeholder)",t:"New Year’s Eve",tag:"NYE",i:[
+["08:30","Breakfast and coffee at The Doctor’s House","Great espresso on site. Check out by 10:00."],
+["10:30","Surf lesson in Weligama","Beginner-friendly bay, about 20 min from Madiha. Or just a beach morning."],
+["13:00","Lunch at Lighthouse Ahangama","Rooftop cafe and restaurant with ocean views."],
+["14:30","Pool and nap","Rest up. Tonight runs very late."],
+["17:30","Sundowner","Beach bar in Ahangama."],
+["19:30","NYE dinner","Ceylon Sliders in Ahangama, or the Closenberg gala dinner in Galle if tickets exist."],
+["23:30","Countdown and party","Ahangama or Closenberg in Galle. Confirm tickets first and pre-book a driver back."]]},
+{d:"Fri 1 Jan",s:"1 Jan",w:"Ahangama to Hiriketiya",t:"Recover, then move east",tag:"",i:[
+["11:30","Slow brunch","Recovery day. No schedule."],
+["12:30","Check out, then lunch","Check out before the drive."],
+["14:30","Transfer to Hiriketiya","About 1 to 1.25 hrs via Weligama and Mirissa."],
+["15:45","Coconut Tree Hill, Mirissa","Quick photo stop on the way."],
+["17:00","Check in at Chill Vibes Hostel","Your base for Jan 1, 2 and 3. Catch the sunset on the bay."],
+["19:30","Dinner and cocktails at Smoke & Bitters","Pehembiya Beach (Dickwella / Hiriketiya). Asia’s 50 Best Bars cocktail bar and smokehouse. Pre-book a table for six."],
+["21:30","Friday night","A blogger says the Secret Jungle Party runs on Fridays. Confirm before you go."]]},
+{d:"Sat 2 Jan",s:"2 Jan",w:"Hiriketiya",t:"Surf, temple and a night out",tag:"",i:[
+["13:00","Wewurukannala Temple","Giant Buddha statue, about 15 min away. Cover shoulders and knees."],
+["15:00","Siesta","Back to the hostel or a hammock."],
+["17:45","Bay sunset","Drinks on the sand."],
+{d:"Sun 3 Jan",s:"3 Jan",w:"Hiriketiya",t:"Last full night",tag:"",i:[
+["07:00","Morning surf at the bay","Early morning session at Hiriketiya bay."],
+["10:30","Brunch at the bay","Easy morning back in Hiriketiya."],
+["17:45","Bay sunset","Your last one in Hiriketiya."],
+["19:30","Dinner","Book a table for six."],
+["21:30","Last night out","Beach bars and live music at the bay. Keep it light, tomorrow is a long drive."]]},
+{d:"Mon 4 Jan",s:"4 Jan",w:"Hiriketiya to Colombo",t:"Last night: Colombo casino",tag:"",i:[
+["09:30","Slow morning","Coffee and a last swim at the bay."],
+["11:30","Check out","Pack for the early flight."],
+["12:00","Last lunch at the bay","Eat before the drive."],
+["13:30","Drive to Colombo","About 3 to 3.5 hrs via the expressway. Check in around 17:00."],
+["17:45","Galle Face Green","Sunset walk and street snacks by the sea."],["19:00","Dinner in Colombo","Book a table for six. Ministry of Crab (Dutch Hospital) is a popular pick."],
+["21:00","Casino night","Bring passports (21+). Smart casual: no flip-flops or beachwear. Aim to leave by 00:30."],["00:30","Back to the hotel","Pack before you go out. Alarm for 03:45."]]},
+{d:"Tue 5 Jan",s:"5 Jan",w:"Colombo to the airport",t:"Fly home",tag:"",i:[
+["04:15","Leave hotel","About 40 to 50 min to the airport by expressway. Pre-book the car."],
+["05:00","Check-in and immigration","Aim to be there at least 3 hrs before departure."],
+["08:05","Flight Colombo to Chennai","Home."]]}
+];
+var main=document.getElementById("days"),chips=document.getElementById("chips");
+var cur=0;
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+D.forEach(function(x,k){
+var c=document.createElement("button");c.className="chip";c.type="button";
+c.innerHTML="<b>"+esc(x.s)+"</b>"+esc(x.d.split(" ")[0]);
+c.onclick=function(){cur=k;render();window.scrollTo({top:0})};
+chips.appendChild(c);
+var s=document.createElement("section");s.className="day";s.id="day"+k;
+var h=(x.tag?'<span class="tag">'+esc(x.tag)+'</span>':'')+"<ul>";
+x.i.forEach(function(r){h+='<li><span class="t">'+r[0]+'</span><span><span class="n">'+esc(r[1])+'</span><br><span class="d">'+esc(r[2])+'</span></span></li>'});
+s.innerHTML=h+"</ul>";main.appendChild(s)});
+function render(){
+D.forEach(function(x,k){document.getElementById("day"+k).hidden=(k!==cur)});
+Array.prototype.forEach.call(chips.children,function(c,k){c.setAttribute("aria-current",k===cur)});
+}
+render();
+</script>
+</body>
+
+</html>
