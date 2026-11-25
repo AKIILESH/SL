@@ -28,12 +28,12 @@ main{max-width:760px;margin:0 auto;padding:18px 20px 40px}
 .day[hidden]{display:none}
 .tag{display:inline-block;background:var(--sunbg);color:var(--sun);font:600 12px Figtree,sans-serif;padding:3px 10px;border-radius:999px;margin-bottom:10px}
 ul{list-style:none;margin:0;padding:0}
-li{display:grid;grid-template-columns:64px 1fr;gap:12px;padding:11px 0;border-top:1px solid var(--line)}
+li{display:grid;grid-template-columns:auto 1fr;gap:14px;padding:11px 0;border-top:1px solid var(--line);align-items:baseline}
 li:first-child{border-top:0}
-.t{color:var(--accent);font-weight:600;font-size:14px;font-variant-numeric:tabular-nums}
+.t{color:var(--accent);font-weight:600;font-size:14px;font-variant-numeric:tabular-nums;white-space:nowrap;min-width:48px}
 .n{font-weight:600}
 .d{color:var(--mute);font-size:14.5px}
-@media (max-width:420px){li{grid-template-columns:52px 1fr;gap:10px}}
+@media (max-width:420px){li{grid-template-columns:auto 1fr;gap:10px}}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 </style>
 </head>
@@ -46,11 +46,17 @@ li:first-child{border-top:0}
 <script>
 var D=[
 {d:"Wed 30 Dec",s:"30 Dec",w:"Colombo to Ahangama to Madiha",t:"Arrive and settle in",tag:"",i:[
-["10:15","Flight Chennai to Colombo","Lands 11:30. Sort your ETA and travel documents before you fly."],
-["14:45","Lunch at Kai Ahangama","Beachfront dining and pool vibes in Ahangama. About 2.5 hrs from the airport by expressway."],
-["17:00","Check in at Dreamscape Villa","Your base for 30 and 31 Dec nights. Settle into the villa and drop luggage."],
-["17:45","Sunset at nearby beach","Catch the south coast sunset and relax by the water."],
-["19:00","Dinner and party at The Doctor’s House","Wood-fired pizza on site. Live DJs and music on Wednesdays, 6 pm to midnight."]]},
+["07:15","Be at Chennai airport","International check-in."],
+["10:15","Flight to Colombo","Flight departure."],
+["11:30","Land","Sri Lanka time is 30 min ahead of India."],
+["11:30 – 12:45","Arrivals & driver pickup","Immigration, bags, cash/SIM. Driver meets you at arrivals."],
+["12:45","Leave for Ahangama in a 6+ seater van","Take the Southern Expressway, with one short rest-stop break around 14:15 for a snack and toilets."],
+["15:45 – 16:00","Arrive at Kai Ahangama","Luggage stays in the van."],
+["16:00 – 17:15","Late lunch","Beachfront dining at Kai Ahangama."],
+["17:15 – 18:15","Pool, drinks and sunset","Right at the beachfront. Sunset is around 18:00."],
+["18:15 – 19:15","Check in at Dreamscape Villa","Freshen up, rest."],
+["19:30 – 20:00","Head to The Doctor's House","A short tuk-tuk ride."],
+["20:00 – late","Dinner and party at The Doctor's House","Wood-fired pizza dinner, then DJs and music (6 pm to midnight on Wednesdays, and Dec 30 is a Wednesday)."]]},
 {d:"Thu 31 Dec",s:"31 Dec",w:"Madiha to Ahangama (placeholder)",t:"New Year’s Eve",tag:"NYE",i:[
 ["10:30","Kai Beach Club & Pool","Pool, daybeds, and oceanfront vibes in Ahangama."],
 ["13:00","Lunch at Lighthouse Ahangama","Rooftop cafe and restaurant with ocean views."],
